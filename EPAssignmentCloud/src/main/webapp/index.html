@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>My Film Website</title>
+  </head>
+
+<style>
+.header {
+  color: white;
+  text-align: center;  
+}
+body {
+  background-color: grey;
+}
+</style>
+
+  <body>
+    <h1 class = "header">Welcome to my Film Database!</h1>
+    <table>
+      <tr>
+      <p><b>Search All Films</b></p>
+        <form method="get" action="./getAllFilms">
+        <input style=" padding: 7px; border: 2px solid black; border-radius: 1px;" type="text" placeholder="Enter xml or json" name="data-format" id="inputFormatDataType">
+        <button class="ui-button ui-widget ui-corner-all" type="button" id="getFilms" >Search All films</button>
+       <div class="data"><table display: inline border: 2px; " id="data"></table></div>
+        </form>
+      </tr>
+    </table>
+    <table>
+    	<tr>
+    	<p><b>Search Film By ID</b></p>
+        	<form method="get" action="./getFilmByID">
+        	<input style=" padding: 7px; border: 2px solid black; border-radius: 1px;" type="text" placeholder="Enter Film ID" name="id">
+        	<button class="ui-button ui-widget ui-corner-all" type="submit">Search By ID</button>
+        	<select name="data-format" id="options">
+        		<option value="json">JSON</option>
+        		<option value= "xml">XML</option>
+        	</select>
+        </form>
+     	</tr>
+    </table>
+        <table>
+    	<tr>
+        	<form>
+        	<p><b>Delete Film</b></p>
+        	<input id="inputFormatID" style=" padding: 7px; border: 2px solid black; border-radius: 1px;" type="text" placeholder="Enter Film ID">
+        	<button id="deleteFilm" style="color: black;" class="ui-button ui-widget ui-corner-all" type="button">Delete By ID</button>
+        	</form>
+     	</tr>
+    </table>
+    <table>
+    <tr>
+    <p><b>Search Film By Title</b></p>
+        <form method="get" action="./getFilmBytitle">
+        <input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" type="text" placeholder="Enter Film Title" name="title">
+        <button class="ui-button ui-widget ui-corner-all" type="submit">Search By Title</button>
+        <select name="data-format" id="options">
+        <option value="json">JSON</option>
+        <option value= "xml">XML</option>
+        </select>
+        </form>
+      </tr>
+    </table>
+    
+    <table>  
+    <form>
+    <p><b>Add Film to Film Database</b></p>
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="byID" type="int" placeholder = "Enter Id here" name="id"/>
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="byTitle" type="text" placeholder = " Enter Title Here" name="title"/>  
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;"  id="byYear"type="int" placeholder =  " Enter Year Here" name="year"/>  
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="byDirector"type="text" placeholder = "Enter Director Here" name="director"/> 
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="byStars" type="text" placeholder = " Enter Stars Here" name="stars"/>
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="byReview" type="text" placeholder = "Enter Review Here" name="review"/> 
+		<button id="addFilm" style="color: black;" class="ui-button ui-widget ui-corner-all" type="button">Add Film</button>
+		<select name="data-format" id="options">
+        		<option value="json">Send as JSON</option>
+        		<option value= "xml">Send as XML</option>
+        	</select>
+    </form>
+    </table>  
+    
+    <table>  
+    <form>
+    <p><b>Updating Film in Film Database</b></p>
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="bID" type="int" placeholder = "Enter Id here" name="id"/>
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="bTitle" type="text" placeholder = " Enter Title Here" name="title"/>  
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;"  id="bYear"type="int" placeholder =  " Enter Year Here" name="year"/>  
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="bDirector"type="text" placeholder = "Enter Director Here" name="director"/> 
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="bStars" type="text" placeholder = " Enter Stars Here" name="stars"/>
+		<input style=" padding: 7px;border: 2px solid black; border-radius: 1px;" id="bReview" type="text" placeholder = "Enter Review Here" name="review"/> 
+		<button id="updateFilm" style="color: black;" class="ui-button ui-widget ui-corner-all" type="button">Update Film</button>
+    </form>
+    </table>  
+  </body>
+  <script type="text/javascript" src="/JavaScript/ajaxScript.js"></script>
+</html>
